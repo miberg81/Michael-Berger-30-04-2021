@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="row">
+    <form #form="ngForm" class="auto-complete-form" >
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="searchLabel">Please start typing a city name. Full name is not required...</mat-label>
+        <input type="text" placeholder="choose from this list" aria-label="Number" value = "Tel Aviv / Israel"
+              matInput
+              [ngModel] = "userInput"
+              name = "userInput"
+              (keyup) = "onKeyUp($event)"
+              [matAutocomplete] = "auto">
+        <mat-icon matSuffix><span class="material-icons md-24">search</span></mat-icon>
+      </mat-form-field>
+      <mat-autocomplete #auto = "matAutocomplete" 
+      (optionSelected) = onCitySelected($event) [displayWith]="displayFn">
+        <mat-option *ngFor="let city of matchingCitiesRes" [value]="city">
+          {{city?.LocalizedName}} / {{city?.Country?.LocalizedName}}
+        </mat-option>
+      </mat-autocomplete>
+    </form>
+  </div>
+
+  <app-city-detail [city] = "city"> </app-city-detail>
+</div>

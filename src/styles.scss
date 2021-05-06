@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+   width: 100vw;
+   height: 100vh;
+   height: 100%; 
+   background-color: antiquewhite;
+   margin: 0;
+   padding: 0;
+   //background-color: var(--main-color); 
+}
+
+@media (prefers-color-scheme: dark) {
+   body {
+      background-color: #5e4caf;
+      //background-color: var(--main-color);
+   }
+ }
+
+body { 
+   font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+* {
+   box-sizing: border-box;
+ }
+
+.row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-items: flex-start;
+ }
+
+ .column {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-items: flex-start;
+ }
+
+ :root {
+   --main-color: #4caf50;
+   --secondary-color: #1590a1;
+   --background-color-1: #ffffff;
+   --background-color-2: #2a2b2b;
+   --default-font-color: black;
+ }
+
+//  .dark-mode {
+//    --main-color: #5e4caf;
+//    --secondary-color: #1590a1;
+//    --background-color-1: #ffffff;
+//    --background-color-2: #2a2b2b;
+//    --default-font-color: black;
+//  }
+

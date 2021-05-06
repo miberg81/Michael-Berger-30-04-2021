@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <mat-card  class="day-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>{{dayCast.dayOfWeek}}</mat-card-title>
+    </mat-card-header>
+    <!-- <img mat-card-image
+     src="https://material.angular.io/assets/img/examples/shiba2.jpg" 
+     alt="Photo of a Shiba Inu"> -->
+     <mat-icon matSuffix><span class="material-icons md-24">wb_sunny</span></mat-icon>
+    <mat-card-content>
+      <p>
+         {{fahrenheitToCelsius(minTemp)}} / {{fahrenheitToCelsius(maxTemp)}} {{unit}}
+      </p>
+    <button mat-button (click)="toggleUnit()">convert!</button>
+    </mat-card-content>
+  </mat-card>  
+</div>

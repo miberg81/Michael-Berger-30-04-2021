@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="row top-row">
+    <div class="row left-container">
+     <span class="material-icons md-48">location_city</span>
+      <!-- <img [src]="city?.img" alt="city avatar"> -->
+      <div class="column city-name-temp">
+        <span>{{city?.name || "city"}}</span>
+        <span>{{city?.tempCurrent}} C</span>    
+      </div>
+    </div>
+    <div class="row right-container">
+      <button mat-button (click)="onAddToRemoveFromFavorites()">
+        <span *ngIf="city && !city.isFavorite" class="material-icons md-48">favorite_border</span>
+        <span *ngIf="city && city.isFavorite" class="material-icons md-48">favorite</span>
+        {{addOrRemoveFromFavorites}}
+      </button>
+    </div>
+  </div>
+  <div class="row middle-row">
+    <h1 class="today-cast-title">{{city?.weatherText}}</h1>
+  </div>
+  <div class="row bottom-row">
+    <app-day-cast class="day-cast" *ngFor="let dayCastEl of city?.fiveDaysCast; let i=index"
+      [dayCast]="dayCastEl">
+    </app-day-cast>
+  </div>
+</div>

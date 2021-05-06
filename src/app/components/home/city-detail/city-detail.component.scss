@@ -1,0 +1,45 @@
+.wrapper {
+  width: 100%;
+  height: fit-content;
+  border: 0.2rem solid gray;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  .top-row {
+    height:15%;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 6px;
+    margin: 1rem 0 1rem 0;
+    padding:1rem;
+    margin: 1rem;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+    .left-container {
+      .city-name-temp {
+        margin:1rem;
+        justify-content: space-around;
+      }
+    }
+    .right-container {
+      .mat-button{
+        border: 2px solid gray;
+        border-radius: 6px;
+      }
+    }
+  }
+  .bottom-row {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .day-cast{
+      width:15rem;
+    }
+  }
+  .today-cast-title {
+    display: flex;
+    direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+  }
+}

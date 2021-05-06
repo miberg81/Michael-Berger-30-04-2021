@@ -6,6 +6,7 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
+  MatIconModule,
 } from '@angular/material';
 
 @NgModule({
@@ -16,6 +17,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
+    MatIconModule
   ],
   exports: [
     MatCardModule,
@@ -24,6 +26,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
+    MatIconModule
   ],
 
   entryComponents:[

@@ -25,6 +25,7 @@
     "@ngrx/store": "^8.0.0",
     "core-js": "^2.5.4",
     "eslint": "^7.25.0",
+    "heroku-cli": "^7.0.9",
     "i": "^0.3.6",
     "material-design-icons": "^3.0.1",
     "ngrx": "0.0.1-security",

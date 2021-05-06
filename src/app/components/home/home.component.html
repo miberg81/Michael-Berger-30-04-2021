@@ -11,7 +11,7 @@
               [matAutocomplete] = "auto">
         <mat-icon matSuffix><span class="material-icons md-24">search</span></mat-icon>
       </mat-form-field>
-      <mat-autocomplete #auto = "matAutocomplete" 
+      <mat-autocomplete #auto = "matAutocomplete" class="auto-complete" 
       (optionSelected) = onCitySelected($event) [displayWith]="displayFn">
         <mat-option *ngFor="let city of matchingCitiesRes" [value]="city">
           {{city?.LocalizedName}} / {{city?.Country?.LocalizedName}}

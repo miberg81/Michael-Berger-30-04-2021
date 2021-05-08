@@ -1,5 +1,6 @@
 import { Subject } from "rxjs/internal/Subject";
 import { City } from "../components/home/city-detail/city.model";
+import { autoCompleteForWordTel } from "../models/mocks.model";
 
 export class DataService {
   private favorites: Array<City> = new Array<City>();
@@ -27,6 +28,18 @@ export class DataService {
 
   getCityByKey(key: string){
     return this.favorites.find(element => element.key === key);
+  }
+
+  getCurrentConditionsByKeyFromMock(key: string) {
+    const city = autoCompleteForWordTel.find(element => element.Key === key);
+    const currentConditions = city.CurrentConditions;
+    return currentConditions;
+  }
+
+  getFiveDaysForecastByKeyFromMock(key: string) {
+    const city = autoCompleteForWordTel.find(element => element.Key === key);
+    const currentConditions = city.FiveDaysForecast;
+    return currentConditions;
   }
 
 }

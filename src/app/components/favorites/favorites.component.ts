@@ -6,6 +6,8 @@ import { DayCast } from '../home/city-detail/day-cast/day-cast.model';
 import { WeekDays } from '../../models/week-days';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { NoDataAlertComponent } from '../shared/no-data-alert/no-data-alert.component';
 
 @Component({
   selector: 'app-favorites',
@@ -17,6 +19,7 @@ export class FavoritesComponent implements OnInit {
   favorites: City[];
   constructor(
     private dataService:DataService,
+    private dialogue: MatDialog
     //private store: Store<{ favorites: {favorites: City[]} }> 
     ) { }
 
@@ -27,6 +30,9 @@ export class FavoritesComponent implements OnInit {
     this.dataService.favoritesChanged.subscribe(()=>{
       this.favorites = this.dataService.getFavorites(); 
     });
+
+    if(!this.favorites === undefined || this.favorites.length === 0) 
+      this.dialogue.open(NoDataAlertComponent);
     console.log("favorites", this.favorites);
   }
 

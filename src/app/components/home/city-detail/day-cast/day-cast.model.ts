@@ -7,7 +7,7 @@ export class DayCast {
   
   constructor(epocTimestamp: string,tempMin: number,tempMax: number){
     //convert timestamp to day of week
-    const timestamp = +epocTimestamp;
+    const timestamp = + epocTimestamp;
     const a = new Date(timestamp*1000);
     const days = [
       WeekDays.SUNDAY, WeekDays.MONDAY,WeekDays.TUESDAY,

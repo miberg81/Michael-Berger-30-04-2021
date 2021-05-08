@@ -13,18 +13,16 @@ html, body {
    height: 100vh; /* You must set a specified height */
    background-position: center; /* Center the image */
    background-repeat: no-repeat; /* Do not repeat the image */
-   @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 1200px) {
       background-repeat: repeat;
   }
    background-size: cover; /* Resize the background image to cover the entire container */
     
-   //background-color: var(--main-color); 
 }
 
 @media (prefers-color-scheme: dark) {
    body {
       background-color: #5e4caf;
-      //background-color: var(--main-color);
    }
  }
 
@@ -52,13 +50,14 @@ body {
    justify-items: flex-start;
  }
 
- :root {
-   --main-color: #4caf50;
-   --secondary-color: #1590a1;
-   --background-color-1: #ffffff;
-   --background-color-2: #2a2b2b;
-   --default-font-color: black;
- }
+//  :root {
+//    --main-color: #4caf50;
+//    --secondary-color: #1590a1;
+//    --background-color-1: #ffffff;
+//    --background-color-2: #2a2b2b;
+//    --default-font-color: black;
+//    --opacity:0.7;
+//  }
 
 //  .dark-mode {
 //    --main-color: #5e4caf;

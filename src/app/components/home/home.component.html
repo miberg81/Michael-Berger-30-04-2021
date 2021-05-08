@@ -3,12 +3,15 @@
     <form #form="ngForm" class="auto-complete-form" >
       <mat-form-field class="form-field" appearance="outline">
         <mat-label class="searchLabel">Please start typing a city name. Full name is not required...</mat-label>
-        <input type="text" placeholder="choose from this list" aria-label="Number" value = "Tel Aviv / Israel"
+        <input type="text" id="userInput" placeholder="choose from this list" aria-label="Number" value = "Tel Aviv / Israel"
               matInput
+              pattern="^[\s\w\d\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7e]*$"
               [ngModel] = "userInput"
               name = "userInput"
+              #myInput = "ngModel"
               (keyup) = "onKeyUp($event)"
               [matAutocomplete] = "auto">
+        <mat-error *ngIf="myInput.invalid">"only English letters allowed"</mat-error>
         <mat-icon matSuffix><span class="material-icons md-24">search</span></mat-icon>
       </mat-form-field>
       <mat-autocomplete #auto = "matAutocomplete" class="auto-complete" 

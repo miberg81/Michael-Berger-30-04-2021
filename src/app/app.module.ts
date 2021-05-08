@@ -15,6 +15,8 @@ import { ApiService } from './services/api.service';
 import { DataService } from './services/data.service';
 //import { StoreModule } from '@ngrx/store'
 import { FavoritesReducer } from './components/favorites/store/favorites.reducer';
+import { NoDataAlertComponent } from './components/shared/no-data-alert/no-data-alert.component';
+import { ServerProblemAlertComponent } from './components/shared/server-problem-alert/server-problem-alert.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FavoritesReducer } from './components/favorites/store/favorites.reducer
     FavoritesComponent,
     CityComponent,
     CityDetailComponent,
-    DayCastComponent
+    DayCastComponent,
+    NoDataAlertComponent,
+    ServerProblemAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,10 @@ import { FavoritesReducer } from './components/favorites/store/favorites.reducer
     ApiService,
     DataService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    NoDataAlertComponent,
+    ServerProblemAlertComponent
+  ]
 })
 export class AppModule { }

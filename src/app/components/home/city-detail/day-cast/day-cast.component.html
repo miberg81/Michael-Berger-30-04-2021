@@ -5,8 +5,8 @@
     </mat-card-header>
      <mat-icon matSuffix><span class="material-icons md-24">wb_sunny</span></mat-icon>
     <mat-card-content>
-      <p>
-         {{fahrenheitToCelsius(minTemp)}} / {{fahrenheitToCelsius(maxTemp)}} {{unit}}
+      <p class="temperature">
+         {{minTemp}} / {{maxTemp}} {{unit}}
       </p>
     <button mat-button (click)="toggleUnit()">convert!</button>
     </mat-card-content>

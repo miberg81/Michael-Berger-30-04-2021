@@ -7,6 +7,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatIconModule,
+  MatDialogModule,
 } from '@angular/material';
 
 @NgModule({
@@ -17,7 +18,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   exports: [
     MatCardModule,
@@ -26,7 +28,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
 
   entryComponents:[

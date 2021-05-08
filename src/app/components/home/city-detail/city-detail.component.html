@@ -2,8 +2,8 @@
   <div class="row top-row">
     <div class="row left-container">
       <div class="column city-name-temp">
-        <h1>{{city?.name || "city"}}</h1>
-        <h2>{{city?.tempCurrent}} C</h2>    
+        <h2 *ngIf="city?.name" class="city-name">{{city?.name}} / {{city?.country}}</h2>
+        <h3 *ngIf="city?.tempCurrent" class="city-temp">{{city?.tempCurrent}} C</h3>    
       </div>
     </div>
     <div class="row right-container">

@@ -10,9 +10,7 @@
     height:15%;
     justify-content: space-between;
     background-color: white;
-    opacity: 0.7;
     border-radius: 6px;
-    margin: 1rem 0 1rem 0;
     padding:1rem;
     margin: 1rem;
     @media only screen and (max-width: 768px) {
@@ -20,8 +18,13 @@
     }
     .left-container {
       .city-name-temp {
-        margin:1rem;
         justify-content: space-around;
+        .city-name {
+          margin-bottom: 0;
+        }
+        .city-temp {
+          margin-bottom: 0;
+        }
       }
     }
     .right-container {
@@ -39,7 +42,8 @@
       align-items: center;
       margin: 1rem auto;
       color: white;
-      opacity: 1;
+      font-style: italic;
+      font-size: 3em;
     }
   }
   .bottom-row {

@@ -26,14 +26,13 @@ export class FavoritesComponent implements OnInit {
   ngOnInit() {
     //this.favorites = this.store.select('favorites')
     
-    this.favorites = this.dataService.getFavorites();
-    this.dataService.favoritesChanged.subscribe(()=>{
-      this.favorites = this.dataService.getFavorites(); 
+    this.favorites = this.dataService.getSearchHistory().filter(city => city.isFavorite);
+    this.dataService.searchHistoryChanged.subscribe(()=>{
+      this.favorites = this.dataService.getSearchHistory().filter(city => city.isFavorite);
     });
 
     if(!this.favorites === undefined || this.favorites.length === 0) 
       this.dialogue.open(NoDataAlertComponent);
     console.log("favorites", this.favorites);
   }
-
 }

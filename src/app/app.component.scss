@@ -1,6 +1,7 @@
 .wrapper{
   height:100%;
   width:100%;
+  margin: 0 auto;
   .header{
     height:10%;
     width:100%;
@@ -12,6 +13,9 @@
       .app-title{
         font-weight: bold;
       }
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
     }
     .nav{
       width:fit-content;
@@ -20,11 +24,16 @@
         padding: 5px 10px;
         text-decoration: none;
         text-align: center;
-        margin: 10px;
+        margin: 0.5rem;
         display: inline-block;
         background-color: #eee;
         border-radius: 4px;
         min-width: 7rem;
+        //width: fit-content;
+        @media only screen and (max-width: 768px) {
+          //width:fit-content;
+          min-width: 3rem;
+        }
       }
       a:visited, a:link {
         color: #607d8b;
@@ -43,7 +52,7 @@
 
   .main {
     height: 90%;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 

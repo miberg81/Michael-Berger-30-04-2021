@@ -1,7 +1,13 @@
-<div class="wrapper"
+<!-- <div class="wrapper"
   fxLayout="row wrap" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
   <ng-container *ngFor="let cityEl of favorites">
-    <app-city class="city" [city]="cityEl" fxFlex="0 1 calc(33.3% - 32px)"></app-city>
+    <app-city class="city" [city]="cityEl" fxFlex.gt-xs="0 1 calc(20% - 32px)"></app-city>
   </ng-container>
+</div> -->
+
+<div class="wrapper row">
+    <app-city class="city" 
+    [city]="cityEl" *ngFor="let cityEl of favorites">
+    </app-city>
 </div>
 

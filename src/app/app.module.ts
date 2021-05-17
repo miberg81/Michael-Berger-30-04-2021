@@ -17,6 +17,8 @@ import { DataService } from './services/data.service';
 import { FavoritesReducer } from './components/favorites/store/favorites.reducer';
 import { NoDataAlertComponent } from './components/shared/no-data-alert/no-data-alert.component';
 import { ServerProblemAlertComponent } from './components/shared/server-problem-alert/server-problem-alert.component';
+import { SearchHistoryComponent } from './components/search-history/search-history.component';
+import { SearchDetailComponent } from './components/search-history/search-detail/search-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ServerProblemAlertComponent } from './components/shared/server-problem-
     CityDetailComponent,
     DayCastComponent,
     NoDataAlertComponent,
-    ServerProblemAlertComponent
+    ServerProblemAlertComponent,
+    SearchHistoryComponent,
+    SearchDetailComponent
   ],
   imports: [
     BrowserModule,

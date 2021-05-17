@@ -13,26 +13,32 @@ export class CityDetailComponent implements  OnInit, OnChanges {
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    // setup the title on the favorite/unfavorite button
     this.addOrRemoveFromFavorites = this.city.isFavorite?
-     "remove from favorites" : "add to favorites";
+    "remove from favorites" : "add to favorites";
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes) {
       this.city = changes.city.currentValue;
+      this.addOrRemoveFromFavorites = this.city.isFavorite?
+     "remove from favorites" : "add to favorites";
     }
   }
   
-  onAddToRemoveFromFavorites(){
+  onAddToRemoveFromFavorites() {
     if(this.city){
       if(this.city.isFavorite) {
         // this will also emit in Subject to notify all parties of interest about favorites change
-        this.dataService.removeFromFavorites(this.city);  
+        this.dataService.unmarkCityAsFavorite(this.city);  
+        this.city.isFavorite = false;
+        this.addOrRemoveFromFavorites = "add to favorites"
       } else {
         // this will also emit in Subject to notify all parties of interest about favorites change
-        this.dataService.addToFavorites(this.city);
+        this.dataService.markCityAsFavorite(this.city);
+        this.city.isFavorite = true;
+        this.addOrRemoveFromFavorites = "remove from favorites";
       }
-      this.city.isFavorite = !this.city.isFavorite;
     }
   }
 }

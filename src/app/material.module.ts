@@ -8,6 +8,7 @@ import {
   MatInputModule,
   MatIconModule,
   MatDialogModule,
+  MatTableModule,
 } from '@angular/material';
 
 @NgModule({
@@ -19,7 +20,8 @@ import {
     MatInputModule,
     FlexLayoutModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   exports: [
     MatCardModule,
@@ -29,14 +31,13 @@ import {
     MatInputModule,
     FlexLayoutModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
 
   entryComponents:[
   ],
   providers: [
   ]
-
 })
-
 export class CustomMaterialModule { }

@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <table mat-table [dataSource]="searchHistory" multiTemplateDataRows>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button (click)="expandedElement = expandedElement === element ? null : element"         
+                aria-label="expand colapse button">
+                <mat-icon *ngIf="element != expandedElement">add</mat-icon>
+                <mat-icon *ngIf="element == expandedElement">remove</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let element"> {{element.country }} </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> {{ Date | date:'M/yyyy' }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.date }}  </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="temp">
+      <th mat-header-cell *matHeaderCellDef> Temerature </th>
+      <td mat-cell *matCellDef="let element"> {{ element.tempCurrent }} C  </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+        class="data-row"
+        [class.expanded-row]="expandedElement === element">
+    </tr>
+    <!-- <tr mat-row *matRowDef="let row; columns: ['expandedDetail']"
+     class="detail-row"></tr> -->
+
+    <!-- Expanded Content - The detail row is made up of this one cell that spans across all columns -->
+    <!-- <ng-container matColumnDef="expandedDetail">
+      <td mat-cell class="inner-table" *matCellDef="let element"
+       [attr.colspan]="columnsToDisplay.length">
+        <div class="element-detail"
+            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <app-search-detail [city]="element"></app-search-detail>
+        </div>
+      </td>
+    </ng-container> -->
+
+  </table>
+</div>

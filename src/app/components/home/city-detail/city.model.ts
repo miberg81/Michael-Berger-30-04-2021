@@ -5,6 +5,7 @@ export class City {
     public name:string
     public country:string
     public tempCurrent: number
+    public dateMesured: Date
     public tempMaximum: number
     public tempMinimum: number
     public weatherText: string

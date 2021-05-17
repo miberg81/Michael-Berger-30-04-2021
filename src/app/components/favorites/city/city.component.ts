@@ -16,12 +16,11 @@ export class CityComponent implements OnInit,OnChanges {
   
   ngOnChanges(changes: SimpleChanges): void {
     if(changes) {
-          this.city = changes.city.currentValue;
+      this.city = changes.city.currentValue;
     }
   }
 
   onOpenCityClicked() {
     this.router.navigate(['/home', this.city.key]);
   }
-
 }
